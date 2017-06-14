@@ -269,10 +269,10 @@ foreign import ccall unsafe "zmq.h zmq_version"
 foreign import ccall unsafe "zmq.h zmq_ctx_new"
     c_zmq_ctx_new :: IO ZMQCtx
 
-foreign import ccall unsafe "zmq.h zmq_ctx_shutdown"
+foreign import ccall safe "zmq.h zmq_ctx_shutdown"
     c_zmq_ctx_shutdown :: ZMQCtx -> IO CInt
 
-foreign import ccall unsafe "zmq.h zmq_ctx_term"
+foreign import ccall safe "zmq.h zmq_ctx_term"
     c_zmq_ctx_term :: ZMQCtx -> IO CInt
 
 foreign import ccall unsafe "zmq.h zmq_ctx_get"
